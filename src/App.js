@@ -23,6 +23,7 @@ class App extends Component {
     ]
   }
 
+  // Toggle Complete
   markComplete = (id) => {
     console.log( id )
 
