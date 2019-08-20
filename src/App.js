@@ -19,8 +19,8 @@ class App extends Component {
 
     console.log('component mounted')
 
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-      .then(res => console.log(res))
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+      .then(res => this.setState({ todos: res.data }))
 
   }
 
