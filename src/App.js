@@ -5,29 +5,23 @@ import About from './components/pages/About'
 import AddTodo from './components/AddTodo'
 import Todos from './components/Todos'
 import uuid from 'uuid'
+import axios from 'axios'
 
 import './App.css';
 
 class App extends Component {
 
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-        title: 'Take out the trash',
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: 'Dinner with wife',
-        completed: true
-      },
-      {
-        id: uuid.v4(),
-        title: 'Meeting with boss',
-        completed: false
-      },
-    ]
+    todos: []
+  }
+
+  componentDidMount() {
+
+    console.log('component mounted')
+
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+      .then(res => console.log(res))
+
   }
 
   // Toggle Complete
